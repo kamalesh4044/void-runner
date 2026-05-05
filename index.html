@@ -1,16 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Void-Runner | 3D Synthwave Experience</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta name="theme-color" content="#070812" />
+    <title>Void Runner</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="ui">
-      <div id="score">SCORE: 0000</div>
-      <div id="controls">USE ARROW KEYS TO MOVE</div>
-    </div>
-    <script type="module" src="/main.js"></script>
+    <main id="game-shell" aria-label="Void Runner game">
+      <section id="hud">
+        <div class="brand">
+          <span class="brand-mark">V</span>
+          <div>
+            <h1>Void Runner</h1>
+            <p>Moon bridge parkour</p>
+          </div>
+        </div>
+
+        <div class="stats" aria-live="polite">
+          <div>
+            <span>Score</span>
+            <strong id="score">000000</strong>
+          </div>
+          <div>
+            <span>Best</span>
+            <strong id="best">000000</strong>
+          </div>
+          <div>
+            <span>Coins</span>
+            <strong id="coins">000</strong>
+          </div>
+          <div>
+            <span>Combo</span>
+            <strong id="combo">x1</strong>
+          </div>
+          <div>
+            <span>Shield</span>
+            <strong id="shield">0</strong>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="pauseBtn" type="button" title="Pause or resume">Pause</button>
+          <button id="restartBtn" type="button" title="Restart run">Restart</button>
+        </div>
+      </section>
+
+      <section id="center-panel">
+        <div id="message-card">
+          <p id="eyebrow">Ready</p>
+          <h2 id="message-title">Run the void</h2>
+          <p id="message-copy">Sprint across floating moon bridges, jump broken paths, slide under gates, and chain parkour combos.</p>
+          <button id="startBtn" type="button">Start Run</button>
+        </div>
+      </section>
+
+      <section id="mobile-controls" aria-label="Touch controls">
+        <button id="leftBtn" type="button" aria-label="Move left">Left</button>
+        <button id="jumpBtn" type="button" aria-label="Jump">Jump</button>
+        <button id="slideBtn" type="button" aria-label="Slide">Slide</button>
+        <button id="rightBtn" type="button" aria-label="Move right">Right</button>
+      </section>
+
+      <section id="footer-strip">
+        <span>A / Left</span>
+        <span>D / Right</span>
+        <span>W Jump</span>
+        <span>S Slide</span>
+        <span>Space Pause</span>
+        <span>R Restart</span>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

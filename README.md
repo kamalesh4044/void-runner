@@ -1,81 +1,49 @@
-<div align="center">
+# Void Runner
 
-# 🌌 Void-Runner
-### High-Speed 3D Synthwave Experience
-[![Three.js](https://img.shields.io/badge/Three.js-Graphics-purple.svg)](https://threejs.org/)
-[![Physics](https://img.shields.io/badge/Cannon.js-Physics-orange.svg)](https://pmndrs.github.io/cannon-es/)
-[![Vite](https://img.shields.io/badge/Vite-Fast-646CFF.svg)](https://vitejs.dev/)
-[![FPS: 60+](https://img.shields.io/badge/FPS-60+-brightgreen.svg)]()
+Void Runner is a full-screen 3D parkour runner built with Three.js and Vite. Sprint across floating moon bridges, dodge hazards, jump broken paths, slide under gates, collect coins, and chain combos while the world accelerates.
 
-**Void-Runner** is a high-performance, 3D endless runner built for the modern browser. It features a procedurally generated neon universe, real-time physics, and a dynamic difficulty engine that scales with your skill.
+## Features
 
-[Play Now](https://void-runner-kamal.vercel.app) • [Game Mechanics](#-technical-specs) • [Controls](#-controls-guide)
+- Full-bleed WebGL scene with a giant moon, stars, floating islands, fog, and animated sky bridge.
+- Stylized human parkour runner built from 3D primitives.
+- Lane movement, jump, slide, pause, restart, and mobile touch controls.
+- Procedural hurdles, slide gates, pillars, bridge-gap markers, coins, and shield pickups.
+- Coins, shields, combo multiplier, score, best score, pause, restart, and game-over flow.
+- Responsive HUD designed for desktop and mobile.
+- Local best-score persistence with `localStorage`.
 
-</div>
+## Controls
 
----
+| Action | Input |
+| --- | --- |
+| Move left | `ArrowLeft` or `A` |
+| Move right | `ArrowRight` or `D` |
+| Jump | `ArrowUp` or `W` |
+| Slide | `ArrowDown` or `S` |
+| Pause | `Space` |
+| Restart | `R` |
 
-## 🕹️ Controls Guide
+## Run Locally
 
-| Action | Control | Result |
-| :--- | :--- | :--- |
-| **Move Left** | `ArrowLeft` / `A` | Physics-based lateral shift. |
-| **Move Right** | `ArrowRight` / `D` | Physics-based lateral shift. |
-| **Reset** | `R` | Reload the universe. |
-
----
-
-## ⚙️ Technical Specs
-
-| Engine | Implementation | Performance |
-| :--- | :--- | :--- |
-| **Rendering** | Three.js WebGL | 60 FPS Locked |
-| **Physics** | Cannon-es | Real-time Collision |
-| **Difficulty** | Linear Scaling Algorithm | Dynamic Speed |
-| **Visuals** | FogExp2 & Emissive Lighting | Low-Latency Glow |
-| **Memory** | Geometry Recycling | Infinite Runtime |
-
----
-
-## 📐 Mechanics Deep-Dive
-
-<details>
-<summary><b>View Engine Architecture</b></summary>
-
-Void-Runner uses a "Rolling Horizon" algorithm to recycle grid segments, ensuring that the game can run infinitely without increasing memory usage.
-
-```mermaid
-graph TD
-    A[Game Loop] -- Update --> B[Physics Step]
-    B -- Apply --> C[Player Velocity]
-    C -- Sync --> D[3D Mesh]
-    A -- Recycle --> E[Infinite Floor]
-    E -- Reset Position --> A
+```bash
+npm install
+npm run dev
 ```
-</details>
 
----
+Build for production:
 
-## 🏃 Getting Started
+```bash
+npm run build
+```
 
-<details>
-<summary><b>Quick Launch</b></summary>
+Preview the production build:
 
-1. **Clone**
-   ```bash
-   git clone https://github.com/kamalesh4044/void-runner.git && cd void-runner
-   ```
-2. **Launch**
-   ```bash
-   npm install && npm run dev
-   ```
-</details>
+```bash
+npm run preview
+```
 
----
+## Stack
 
-<div align="center">
-
-### Engineered with 🖤 by [Kamalesh](https://github.com/kamalesh4044)
-*Part of the Elite Engineering Series*
-
-</div>
+- Vite
+- Three.js
+- Cannon dependency retained for future physics experiments
