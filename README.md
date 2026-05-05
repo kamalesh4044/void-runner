@@ -75,7 +75,7 @@ graph TD
 
 <div align="center">
 
-### Engineered with 🖤 by [Kamal](https://github.com/kamalesh4044)
+### Engineered with 🖤 by [Kamalesh](https://github.com/kamalesh4044)
 *Part of the Elite Engineering Series*
 
 </div>
