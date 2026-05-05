@@ -70,6 +70,11 @@ window.addEventListener('keyup', (e) => {
   if (e.key === 'ArrowRight') keys.right = false;
 });
 
+// --- GAME STATE ---
+let score = 0;
+let speed = 0.2;
+const speedMultiplier = 0.0005; // Difficulty increases over time
+
 // --- ANIMATION LOOP ---
 const clock = new THREE.Clock();
 
@@ -77,21 +82,31 @@ function animate() {
   requestAnimationFrame(animate);
   const delta = clock.getDelta();
 
+  // Update Game Logic
+  speed += speedMultiplier;
+  score += Math.floor(speed * 10);
+  
+  const scoreElement = document.getElementById('score');
+  if (scoreElement) scoreElement.innerText = `SCORE: ${score.toString().padStart(6, '0')}`;
+
   // Update Physics
   world.fixedStep();
 
-  // Apply Movement
-  if (keys.left) playerBody.velocity.x = -5;
-  else if (keys.right) playerBody.velocity.x = 5;
+  // Apply Movement (Physics)
+  if (keys.left) playerBody.velocity.x = -7;
+  else if (keys.right) playerBody.velocity.x = 7;
   else playerBody.velocity.x *= 0.9;
 
   // Sync Mesh with Physics Body
   playerMesh.position.copy(playerBody.position);
   playerMesh.quaternion.copy(playerBody.quaternion);
 
-  // Infinite Scroll Logic (Simulated)
-  gridHelper.position.z += 0.2;
+  // Advanced Infinite Scroll (Reactive to Speed)
+  gridHelper.position.z += speed;
   if (gridHelper.position.z > 4) gridHelper.position.z = 0;
+
+  // Camera Shake Effect (Based on Speed)
+  camera.position.y = 2 + Math.sin(Date.now() * 0.01) * (speed * 0.05);
 
   renderer.render(scene, camera);
 }

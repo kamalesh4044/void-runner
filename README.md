@@ -1,57 +1,81 @@
-# 🌌 Void-Runner: 3D Synthwave Experience
+<div align="center">
 
-**Void-Runner** is a high-speed, 3D endless runner built with **Three.js** and **Cannon-es**. It features a procedurally generated synthwave universe, real-time physics, and high-performance graphics.
+# 🌌 Void-Runner
+### High-Speed 3D Synthwave Experience
+[![Three.js](https://img.shields.io/badge/Three.js-Graphics-purple.svg)](https://threejs.org/)
+[![Physics](https://img.shields.io/badge/Cannon.js-Physics-orange.svg)](https://pmndrs.github.io/cannon-es/)
+[![Vite](https://img.shields.io/badge/Vite-Fast-646CFF.svg)](https://vitejs.dev/)
+[![FPS: 60+](https://img.shields.io/badge/FPS-60+-brightgreen.svg)]()
 
----
+**Void-Runner** is a high-performance, 3D endless runner built for the modern browser. It features a procedurally generated neon universe, real-time physics, and a dynamic difficulty engine that scales with your skill.
 
-## 🚀 Game Features
+[Play Now](https://void-runner-kamal.vercel.app) • [Game Mechanics](#-technical-specs) • [Controls](#-controls-guide)
 
-- **🏎️ High-Speed 3D Engine**: Powered by Three.js with custom lighting and fog effects.
-- **🛡️ Real-time Physics**: Accurate collision detection and gravity using the Cannon-es engine.
-- **✨ Synthwave Aesthetics**: Neon purple grids, glowing cyan player models, and retro-futuristic visuals.
-- **🏃 Infinite Gameplay**: Procedural environment logic for an endless gaming experience.
-- **🕹️ Keyboard Controls**: Responsive input handling for smooth player movement.
-
----
-
-## 🛠️ Tech Stack
-
-- **Renderer**: Three.js (WebGL)
-- **Physics**: Cannon-es
-- **Build Tool**: Vite
-- **Language**: JavaScript (ES6+)
+</div>
 
 ---
 
-## 📐 Mechanics Walkthrough
+## 🕹️ Controls Guide
 
-- **`Rendering Loop`**: Optimized 60fps requestAnimationFrame loop.
-- **`Physics Sync`**: Seamless mapping between the invisible physics world and the visible 3D mesh.
-- **`Infinite Grid`**: Mathematical scrolling logic that recycles the floor geometry for infinite distance.
+| Action | Control | Result |
+| :--- | :--- | :--- |
+| **Move Left** | `ArrowLeft` / `A` | Physics-based lateral shift. |
+| **Move Right** | `ArrowRight` / `D` | Physics-based lateral shift. |
+| **Reset** | `R` | Reload the universe. |
+
+---
+
+## ⚙️ Technical Specs
+
+| Engine | Implementation | Performance |
+| :--- | :--- | :--- |
+| **Rendering** | Three.js WebGL | 60 FPS Locked |
+| **Physics** | Cannon-es | Real-time Collision |
+| **Difficulty** | Linear Scaling Algorithm | Dynamic Speed |
+| **Visuals** | FogExp2 & Emissive Lighting | Low-Latency Glow |
+| **Memory** | Geometry Recycling | Infinite Runtime |
+
+---
+
+## 📐 Mechanics Deep-Dive
+
+<details>
+<summary><b>View Engine Architecture</b></summary>
+
+Void-Runner uses a "Rolling Horizon" algorithm to recycle grid segments, ensuring that the game can run infinitely without increasing memory usage.
+
+```mermaid
+graph TD
+    A[Game Loop] -- Update --> B[Physics Step]
+    B -- Apply --> C[Player Velocity]
+    C -- Sync --> D[3D Mesh]
+    A -- Recycle --> E[Infinite Floor]
+    E -- Reset Position --> A
+```
+</details>
 
 ---
 
 ## 🏃 Getting Started
 
-### Prerequisites
-- Node.js (v18+)
+<details>
+<summary><b>Quick Launch</b></summary>
 
-### Installation
-1. Clone the repository:
+1. **Clone**
    ```bash
-   git clone https://github.com/your-username/void-runner.git
-   cd void-runner
+   git clone https://github.com/kamalesh4044/void-runner.git && cd void-runner
    ```
-2. Install dependencies:
+2. **Launch**
    ```bash
-   npm install
+   npm install && npm run dev
    ```
-3. Start the game:
-   ```bash
-   npm run dev
-   ```
+</details>
 
 ---
 
-## 👤 Author
-**Kamal** - *Graphics & Game Engineer*
+<div align="center">
+
+### Engineered with 🖤 by [Kamal](https://github.com/kamalesh4044)
+*Part of the Elite Engineering Series*
+
+</div>
