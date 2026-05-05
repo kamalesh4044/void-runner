@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #050505;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  pointer-events: none;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+#score {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#controls {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  opacity: 0.7;
+  letter-spacing: 2px;
+}
