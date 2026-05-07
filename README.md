@@ -1,4 +1,4 @@
-# Void Runner
+# Void Runner.
 
 Void Runner is a full-screen 3D parkour runner built with Three.js and Vite. Sprint across floating moon bridges, dodge hazards, jump broken paths, slide under gates, collect coins, and chain combos while the world accelerates.
 
